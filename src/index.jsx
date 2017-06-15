@@ -6,7 +6,7 @@ import {
   applyMiddleware,
 } from 'redux';
 
-import App from './components/app';
+import Calculator from './components/calculator';
 import reducers from './reducers';
 
 const store = createStore(
@@ -16,6 +16,6 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Calculator />
   </Provider>
   , document.querySelector('.container'));

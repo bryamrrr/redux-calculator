@@ -1,3 +1,5 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
   entry: './src/index.jsx',
   output: {
@@ -18,7 +20,25 @@ module.exports = {
         query: {
           presets: ['env', 'react']
         }
-      }
+      },
+      {
+        test: /\.css$/,
+        exclude: /(node_modules)/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+           {
+             loader: 'css-loader',
+             options: {
+               modules: true,
+               localIdentName: process.env.NODE_ENV === 'production'
+                ? '[hash:base64:5]'
+                : '[name]__[local]___[hash:base64:5]'
+             }
+           }
+         ],
+        }),
+      },
     ]
   },
   resolve: {
@@ -27,5 +47,9 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './'
-  }
+  },
+  target: 'web',
+  plugins: [
+    new ExtractTextPlugin('styles.css'),
+  ]
 };

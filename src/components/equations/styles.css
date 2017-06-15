@@ -1,0 +1,5 @@
+.container {
+  display: flex;
+  flex-basis: 15%;
+  flex-direction: column;
+}

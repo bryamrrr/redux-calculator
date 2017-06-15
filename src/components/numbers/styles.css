@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 85%;
+}
+
+.container button {
+  flex-basis: 33.33%;
+}
+
+.container button:last-of-type {
+  flex-basis: 100%;
+}

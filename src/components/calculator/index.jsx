@@ -5,12 +5,16 @@ import Numbers from '../numbers';
 import Equations from '../equations';
 import Functions from '../functions';
 
+import styles from './styles.css';
+
 function Calculator() {
   return (
-    <div>
+    <div className={styles.container}>
       <TextView />
-      <Numbers />
-      <Equations />
+      <div className={styles.inner}>
+        <Numbers />
+        <Equations />
+      </div>
       <Functions />
     </div>
   );

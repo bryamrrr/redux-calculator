@@ -1,0 +1,12 @@
+.container {
+  margin: 50px auto;
+  max-width: 350px;
+}
+
+.container button {
+  padding: 10px;
+}
+
+.inner {
+  display: flex;
+}

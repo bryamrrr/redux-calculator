@@ -1,8 +1,12 @@
 import React from 'react';
 
+import styles from './styles.css';
+
 function TextView() {
   return (
-    <div>0</div>
+    <div className={styles.container}>
+      <span className={styles.value}>0</span>
+    </div>
   );
 }
 

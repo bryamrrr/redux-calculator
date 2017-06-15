@@ -1,8 +1,10 @@
 import React from 'react';
 
+import styles from './styles.css';
+
 function Numbers() {
   return (
-    <section>
+    <section className={styles.container}>
       <button>7</button>
       <button>8</button>
       <button>9</button>

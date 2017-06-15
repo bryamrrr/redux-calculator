@@ -1,0 +1,6 @@
+.container {
+  display: flex;
+}
+
+.container button { flex-basis: 42.5%; }
+.container button:last-of-type { flex-basis: 15%; }

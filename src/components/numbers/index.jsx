@@ -6,7 +6,7 @@ import pressValue from '../../actions/press-value';
 
 import styles from './styles.css';
 
-export function Numbers(props) {
+export function PureNumbers(props) {
   return (
     <section className={styles.container}>
       <button onClick={() => props.pressValue('7')}>7</button>
@@ -23,7 +23,7 @@ export function Numbers(props) {
   );
 }
 
-Numbers.propTypes = {
+PureNumbers.propTypes = {
   pressValue: PropTypes.func.isRequired,
 };
 
@@ -33,4 +33,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(null, mapDispatchToProps)(Numbers);
+export default connect(null, mapDispatchToProps)(PureNumbers);

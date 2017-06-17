@@ -6,12 +6,28 @@ import {
   applyMiddleware,
 } from 'redux';
 
+import {
+  combineEpics,
+  createEpicMiddleware,
+} from 'redux-observable';
+
 import Calculator from './components/calculator';
 import reducers from './reducers';
 
+import { pressValueEpic } from './actions/press-value';
+
+
+// Epic setup
+const rootEpic = combineEpics(
+  pressValueEpic,
+);
+
+const epicMiddleware = createEpicMiddleware(rootEpic);
+
+// Store setup
 const store = createStore(
   reducers,
-  applyMiddleware(),
+  applyMiddleware(epicMiddleware),
 );
 
 ReactDOM.render(

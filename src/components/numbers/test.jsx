@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Numbers } from './index';
+import { PureNumbers as Numbers } from './index';
 
 describe('Numbers', () => {
   let wrapper;

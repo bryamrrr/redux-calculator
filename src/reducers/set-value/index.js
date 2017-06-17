@@ -8,11 +8,13 @@ export default (state, payload) => {
 
     newState.firstValue = parseInt(newState.display, 10);
   } else {
-    newState.display = (newState.display === '0')
-      ? payload
-      : (newState.secondValue === 0)
+    if (newState.display === '0') {
+      newState.display = payload;
+    } else {
+      newState.display = (newState.secondValue === 0)
         ? payload
         : newState.display + payload;
+    }
 
     newState.secondValue = parseInt(newState.display, 10);
   }

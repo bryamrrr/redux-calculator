@@ -22,7 +22,7 @@ export default (state = initialState, action) => {
       return setValueReducer(state, action.payload);
     case SET_OPERATOR:
       return setOperatorReducer(state, action.payload);
-    case CALCULATE:
+    case CALCULATE: {
       const result = calculateReducer(state, state.operator);
       return Object.assign({},
         state,
@@ -31,8 +31,9 @@ export default (state = initialState, action) => {
           secondValue: 0,
           display: `${result}`,
           temporalValue: state.secondValue,
-        }
-      )
+        },
+      );
+    }
     default:
       return state;
   }

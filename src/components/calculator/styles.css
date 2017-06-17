@@ -4,6 +4,7 @@
 }
 
 .container button {
+  outline: none;
   padding: 10px;
 }
 

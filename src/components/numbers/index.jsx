@@ -1,22 +1,36 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import pressValue from '../../actions/press-value';
 
 import styles from './styles.css';
 
-function Numbers() {
+export function Numbers(props) {
   return (
     <section className={styles.container}>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>0</button>
+      <button onClick={() => props.pressValue('7')}>7</button>
+      <button onClick={() => props.pressValue('8')}>8</button>
+      <button onClick={() => props.pressValue('9')}>9</button>
+      <button onClick={() => props.pressValue('4')}>4</button>
+      <button onClick={() => props.pressValue('5')}>5</button>
+      <button onClick={() => props.pressValue('6')}>6</button>
+      <button onClick={() => props.pressValue('1')}>1</button>
+      <button onClick={() => props.pressValue('2')}>2</button>
+      <button onClick={() => props.pressValue('3')}>3</button>
+      <button onClick={() => props.pressValue('0')}>0</button>
     </section>
   );
 }
 
-export default Numbers;
+Numbers.propTypes = {
+  pressValue: PropTypes.func.isRequired,
+};
+
+function mapDispatchToProps(dispatch) {
+  return {
+    pressValue: value => dispatch(pressValue(value)),
+  };
+}
+
+export default connect(null, mapDispatchToProps)(Numbers);

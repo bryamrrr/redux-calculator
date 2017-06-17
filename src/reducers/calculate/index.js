@@ -1,21 +1,23 @@
 export default ({ firstValue, secondValue, temporalValue }, operator) => {
-  firstValue = parseInt(firstValue, 10);
-  secondValue = (secondValue)
-    ? parseInt(secondValue, 10)
-    : (temporalValue)
-      ? temporalValue
-      : 0;
+  const fValue = parseInt(firstValue, 10);
+  let sValue;
+
+  if (secondValue) {
+    sValue = parseInt(secondValue, 10);
+  } else {
+    sValue = temporalValue || 0;
+  }
 
   switch (operator) {
     case '+':
-      return firstValue + secondValue;
+      return fValue + sValue;
     case '-':
-      return firstValue - secondValue;
+      return fValue - sValue;
     case '*':
-      return firstValue * secondValue;
+      return fValue * sValue;
     case '/':
-      return firstValue / secondValue;
+      return fValue / sValue;
     default:
       return undefined;
   }
-}
+};

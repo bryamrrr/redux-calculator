@@ -18,6 +18,6 @@ export default ({ firstValue, secondValue, temporalValue }, operator) => {
     case '/':
       return fValue / sValue;
     default:
-      return undefined;
+      return 0;
   }
 };

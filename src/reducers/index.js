@@ -2,6 +2,7 @@ import {
   SET_VALUE,
   SET_OPERATOR,
   CALCULATE,
+  CLEAR,
 } from '../actions/types';
 
 import setValueReducer from './set-value';
@@ -34,6 +35,8 @@ export default (state = initialState, action) => {
         },
       );
     }
+    case CLEAR:
+      return initialState;
     default:
       return state;
   }

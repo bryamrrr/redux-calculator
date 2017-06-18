@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Equations from './index';
+import { PureEquations as Equations } from './index';
 
 describe('Equations', () => {
   let wrapper;

@@ -1,6 +1,6 @@
 import { CALCULATE } from '../types';
 
-import { calculate } from './';
+import calculate from './';
 
 describe('Actions - CALCULATE', () => {
   test('has the correct type', () => {

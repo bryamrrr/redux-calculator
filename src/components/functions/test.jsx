@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Functions from './index';
+import { PureFunctions as Functions } from './index';
 
 describe('Functions', () => {
   let wrapper;

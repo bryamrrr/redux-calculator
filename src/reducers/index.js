@@ -30,7 +30,7 @@ export default (state = initialState, action) => {
           firstValue: result,
           secondValue: 0,
           display: `${result}`,
-          temporalValue: state.secondValue,
+          temporalValue: state.temporalValue || state.secondValue,
         },
       );
     }

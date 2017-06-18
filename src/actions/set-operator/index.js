@@ -1,8 +1,8 @@
 import { SET_OPERATOR } from '../types';
 
-export const setOperator = (operator) => {
+export default function (operator) {
   return {
     type: SET_OPERATOR,
     payload: operator,
   };
-};
+}

@@ -20,24 +20,6 @@ describe('Reducer - Set value', () => {
 
   describe('first value', () => {
     test('adds as first value when theres no operator', () => {
-      expect(reducer(undefined, action).firstValue).toEqual(1);
-      expect(reducer(undefined, action).display).toEqual('1');
-    });
-
-    test('adds to first value with two characters', () => {
-      action.payload = '4';
-
-      const state = Object.assign({}, initialState);
-      state.firstValue = 1;
-      state.display = '1';
-
-      expect(reducer(state, action).firstValue).toEqual(14);
-      expect(reducer(state, action).display).toEqual('14');
-    });
-  });
-
-  describe('first value', () => {
-    test('adds as first value when theres no operator', () => {
       expect(reducer(undefined, action).firstValue).toEqual(1)
       expect(reducer(undefined, action).display).toEqual('1')
     });
@@ -61,7 +43,8 @@ describe('Reducer - Set value', () => {
         firstValue: 14,
         secondValue: null,
         operator: '+',
-        display: '0',
+        display: '14',
+        temporalValue: null,
       }
     });
 

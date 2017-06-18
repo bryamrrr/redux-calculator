@@ -11,9 +11,9 @@ export default (state, payload) => {
     if (newState.display === '0') {
       newState.display = payload;
     } else {
-      newState.display = (newState.secondValue === 0)
-        ? payload
-        : newState.display + Math.abs(parseInt(payload, 10));
+      newState.display = (newState.secondValue)
+        ? newState.display + Math.abs(parseInt(payload, 10))
+        : payload;
     }
 
     newState.secondValue = parseInt(newState.display, 10);

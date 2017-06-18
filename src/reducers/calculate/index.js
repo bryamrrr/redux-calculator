@@ -13,7 +13,7 @@ export default ({ firstValue, secondValue, temporalValue }, operator) => {
       return fValue + sValue;
     case '-':
       return fValue - sValue;
-    case '*':
+    case 'x':
       return fValue * sValue;
     case '/':
       return fValue / sValue;

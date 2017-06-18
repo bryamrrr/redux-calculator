@@ -1,5 +1,5 @@
 import { CALCULATE } from '../types';
 
-export const calculate = () => {
+export default function () {
   return { type: CALCULATE };
-};
+}

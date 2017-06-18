@@ -1,6 +1,6 @@
 import { SET_OPERATOR } from '../types';
 
-import { setOperator } from './';
+import setOperator from './';
 
 describe('Actions - SET_OPERATOR', () => {
   test('has the correct type', () => {

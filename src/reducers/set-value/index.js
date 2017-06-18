@@ -4,7 +4,7 @@ export default (state, payload) => {
   if (!newState.operator) {
     newState.display = (newState.display === '0')
       ? payload
-      : newState.display + payload;
+      : newState.display + Math.abs(parseInt(payload, 10));
 
     newState.firstValue = parseInt(newState.display, 10);
   } else {
@@ -13,7 +13,7 @@ export default (state, payload) => {
     } else {
       newState.display = (newState.secondValue === 0)
         ? payload
-        : newState.display + payload;
+        : newState.display + Math.abs(parseInt(payload, 10));
     }
 
     newState.secondValue = parseInt(newState.display, 10);

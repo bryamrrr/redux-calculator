@@ -26,7 +26,7 @@ export function pressValueEpic(action$) {
     })
     .map(({ payload, length }) => {
       if (length > 1) {
-        return { type: SET_VALUE, payload: -payload };
+        return { type: SET_VALUE, payload: `-${payload}` };
       } else if (length === 1) {
         return { type: SET_VALUE, payload };
       }

@@ -6,7 +6,6 @@ function Functions() {
   return (
     <section className={styles.container}>
       <button>Clear</button>
-      <button>Back</button>
       <button>=</button>
     </section>
   );

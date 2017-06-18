@@ -14,6 +14,6 @@ describe('Functions', () => {
   });
 
   test('has 3 buttons', () => {
-    expect(wrapper.find('button')).toHaveLength(3);
+    expect(wrapper.find('button')).toHaveLength(2);
   });
 });

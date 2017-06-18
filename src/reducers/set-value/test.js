@@ -98,4 +98,33 @@ describe('Reducer - Set value', () => {
       expect(reducer(state, action).display).toEqual('1');
     });
   });
+
+  describe('handles negative values', () => {
+    test('adds negative value as first number', () => {
+      const action = {
+        type: SET_VALUE,
+        payload: '-4',
+      };
+
+      expect(reducer(undefined, action).firstValue).toEqual(-4);
+      expect(reducer(undefined, action).display).toEqual('-4');
+    });
+
+    test('transforms to positive if is not the first number', () => {
+      const state = {
+        firstValue: 14,
+        secondValue: -4,
+        operator: '+',
+        display: '-4',
+      };
+
+      const action = {
+        type: SET_VALUE,
+        payload: '-5',
+      };
+
+      expect(reducer(state, action).secondValue).toEqual(-45);
+      expect(reducer(state, action).display).toEqual('-45');
+    });
+  });
 });
